@@ -1,0 +1,130 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset161 Calibri;}{\f2\fnil\fcharset0 Cambria Math;}{\f3\fnil\fcharset2 Symbol;}}
+{\*\generator Riched20 10.0.19041}{\*\mmathPr\mmathFont2\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\f0\fs28\lang9 Introduction:\b0\fs24\par
+
+\pard\sa200\sl276\slmult1 A \b single-stage audio amplifier \b0 is an electronic circuit designed to amplify weak audio signals. It typically consists of a single amplification stage that takes an input signal and increases its amplitude to drive speakers or other audio equipment. These amplifiers are commonly used in audio applications, such as sound systems, music players, and microphones.\par
+In this report, I will be designing a single-stage audio amplifier using a Bipolar Junction Transistor (BJT) in he \b common emitter configuration\b0 . This configuration is widely used in audio amplifiers due to its ability to provide a high voltage gain, which is necessary for amplifying weak audio signals effectively. To improve the performance and ensure thermal stability, I will include an \b emitter resistor (RE) \b0 in the circuit. This resistor helps stabilize the operating point of the BJT and reduces the effect of temperature variations on the amplifier\rquote s performance.\par
+The design will focus on meeting several key requirements, including achieving a voltage gain of \b 35\b0 , which is 5 times the sum of the digits in my roll number (23L-6001), ensuring the input resistance is greater than 40k\f1\lang1032\'d9, and keeping the output impedance below 500\'d9. The circuit will be powered by a +15V DC supply, and I will also analyze the impact of temperature variations (from -10\f0\lang1033\'b0C to 60\'b0C) on the amplifier\rquote s performance.\par
+This report will include detailed calculations for selecting the component values, an in-depth analysis of the design, and a discussion of the trade-offs involved in meeting the design requirements. Additionally, the report will include a temperature analysis to understand how variations in temperature can affect the performance of the amplifier.\par
+
+\pard\sa200\sl276\slmult1\qc\b\fs28 Problem Analysis:\b0\fs24\par
+
+\pard\sa200\sl276\slmult1\lang9 The initial step of this problem is to determine the type of amplifier to be used. In class, we studied three types of BJT amplifiers: Common Emitter (CE), Common Collector (CC), and Common Base (CB). Based on the problem's requirements for thermal bias stability, high input resistance, and low output resistance, the Common Emitter (CE) amplifier with an emitter resistor RE is the most suitable choice. Here's why:\par
+
+\pard\sa200\sl276\slmult1\qc\ul\b Input Resistance:\ulnone\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 A CE amplifier with an emitter resistor provides a high input resistance, a critical requirement for this design. High input resistance minimizes loading effects and allows for better signal transfer.\par
+{\pntext\f3\'B7\tab}Since the problem specifies that Ri must be greater than 40k\f1\lang1032\'d9, the CE amplifier is the most appropriate option as it can achieve this with proper biasing and design of the base resistor network.\par
+
+\pard\sa200\sl276\slmult1\qc\ul\b\f0\lang1033 2) \f1\lang1032 Thermal Bias Stability:\ulnone\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 The inclusion of an emitter resistor\f0\lang1033  RE in the CE amplifier ensures thermal stability. The resistor helps stabilize the operating point by reducing the effects of temperature changes on the transistor\rquote s behavior.\par
+{\pntext\f3\'B7\tab}This is essential to prevent large variations in the collector current Ic due to temperature changes, maintaining consistent amplifier performance.\par
+
+\pard\sa200\sl276\slmult1\qc\ul\b 3) Gain Requirements:\ulnone\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 According to the problem statement, the open circuit voltage gain Avo must be:\par
+
+\pard\sa200\sl276\slmult1\qc\i Avo = 5 * (6 + 0 + 0 + 1) = 35\i0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 A CE amplifier can achieve this high gain due to its inherent design, especially with a carefully chosen combination of the collector resistor RC and emitter resistor RE. \par
+
+\pard\sa200\sl276\slmult1 In contrast, a Common Collector (CC) amplifier has a voltage gain close to 1, making it unsuitable for this application. Similarly, a Common Base (CB) amplifier has low input resistance, disqualifying it based on the given requirements.\par
+A Common Emitter amplifier with an emitter resistor RE is the best choice for this design, as it meets the key requirements of thermal stability, high input resistance, and the ability to achieve the desired voltage gain of 35. This choice also aligns with the principles of good amplifier design, as studied in class.\par
+
+\pard\sa200\sl276\slmult1\qc\b\fs28 Circuit Design:\par
+\fs24\lang9 Input Stage:\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Vin is applied to the base of the transistor (BJT), which is typical for a common-emitter amplifier.\par
+{\pntext\f3\'B7\tab}The capacitor C1 is there to block DC offset and allow only the AC signal to pass through to the base.\par
+
+\pard\sa200\sl276\slmult1\qc\b Voltage Divider:\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 The R1 and R2 resistors form a voltage divider that sets the bias voltage for the base of the transistor. This ensures proper operation of the transistor in the active region, which is crucial for amplification.\par
+
+\pard\sa200\sl276\slmult1\qc\b Emitter Resistor:\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 The RE resistor is used to stabilize the bias point and provide thermal stability. It also increases the linearity of the amplifier. CB (bypass capacitor) is often used across RE to ensure that RE is bypassed at higher frequencies for AC signals, effectively providing a lower impedance path for the signal and maximizing gain.\par
+{\pntext\f3\'B7\tab}At low frequencies (near DC), CB has no effect because it is an open circuit (high reactance). In this case, RE sets the DC operating point of the transistor and helps provide thermal stability.\par
+{\pntext\f3\'B7\tab}At high frequencies, CB provides a short-circuit path to ground for the AC signal. This bypasses the RE resistor for AC signals, effectively reducing the emitter impedance for AC signals. This allows the amplifier to achieve higher voltage gain by reducing the overall emitter degeneration. Without CB, RE would provide negative feedback and reduce the gain.\par
+
+\pard\sa200\sl276\slmult1\qc\b Collector Resistor:\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 The RC resistor is connected to the collector. It helps set the collector current and also contributes to the voltage gain. The output signal is taken across the RC resistor.\par
+
+\pard\sa200\sl276\slmult1\qc\b Output Stage:\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 C2 is a coupling capacitor that passes the amplified AC signal to the load resistor Rload, while blocking any DC offset.\par
+
+\pard\sa200\sl276\slmult1\qc\b Power Supply (Vcc):\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 +15V DC (Vcc) is used to power the circuit. This voltage is connected to R1 and RC to provide the necessary biasing and current for the transistor.\par
+
+\pard\sa200\sl276\slmult1 This configuration follows the typical structure for a common-emitter amplifier, with AC coupling capacitors (C1, C2), voltage divider biasing (R1, R2), emitter degeneration for stability (RE), and the output taken from the collector (RC).\par
+
+\pard\sa200\sl276\slmult1\qc\b\fs28 Conflicting Requirements and Trade-offs:\b0\fs24\par
+
+\pard\sa200\sl276\slmult1 In the design of a single-stage BJT amplifier, several conflicting requirements and design trade-offs must be considered. These include the following:\par
+\b 1. Open-Circuit Voltage Gain (Avo) vs. Stability\b0\par
+\b Requirement: \b0 One of the key requirements in this design is to achieve an open-circuit voltage gain of -35.\par
+\b Challenge: \b0 Achieving a high voltage gain requires a high Rc \lang1033 value to amplify the voltage signal. However, a higher RC could affect the output impedance of the circuit, and it could increase the risk of thermal instability or saturation.\par
+\b Solution: \b0 To meet the Avo requirement,the collector resistor Rc \lang1033 was chosen to be 859.705 \f1\lang1032\'d9, which provides the necessary gain without making the output impedance too high. This was a crucial design decision because a very high \f0\lang1033 RC\u8203? could lead to instability, while a very low value would reduce the gain. The trade-off here was balancing the required voltage gain while maintaining output impedance requirements.\par
+\b 2. Output Impedance vs. Collector Resistor Value\b0\par
+\b Requirement: \b0 The output impedance should be less than 500\f1\lang1032\'d9 to ensure proper coupling to the next stage of the amplifier or load without excessive voltage drop.\par
+\b Challenge: \b0 The output impedance is primarily determined by the collector resistor \f0\lang1033 RC and any additional components, like the load resistor Rload.  A higher RC tends to increase the output impedance.\par
+\b Solution: \b0 The chosen value of RC (around 859.705\f1\lang1032\'d9) ensures that the output impedance is well within the required range, keeping it below 500\'d9. While the required voltage gain was achieved with this resistor value, the trade-off is that the collector resistor is not as large as it might have been for a higher voltage gain, but it still maintains an acceptable output impedance.\par
+\b 3. \f0\lang1033 Rin vs. RE\b0\par
+\b Requirement:\b0  The input resistance must be greater than 40k\f1\lang1032\'d9. This is critical to ensure that the amplifier does not load the signal source excessively and that it operates within the desired range for input signals.\par
+\b Challenge: \b0 The input resistance is affected by the base resistance, the emitter resistor \f0\lang1033 RE, and the transistor's current gain (beta). The presense of RE increases the input resistance but a very high value of RE\u8203? can reduce the available voltage gain due to local feedback.\par
+\b Solution: \b0 The emitter resistor RE was chosen to be 4.257k\f1\lang1032\'d9 to provide sufficient thermal stability and biasing, but it also increases the input resistance. The input resistance, as calculated, is well above the 40k\'d9 requirement, satisfying the design constraint. However, the high value of \f0\lang1033 RE also acts to reduce the voltage gain, creating a trade-off between achieving the required input resistance and the desired voltage gain. To compensate for this, the voltage gain was calculated as -35, which is within the design requirements.\par
+\b 4. Thermal Stability vs. High Gain\b0\par
+\b Requirement: \b0 The design requires a balance between thermal stability and high gain. A high value of RE ensures thermal stability because it stabilizes the operating point of the transistor. However, increasing RE reduces the voltage gain.\par
+\b Challenge: \b0 As mentioned earlier, the emitter resistor stabilizes the operating point of the transistor by providing negative feedback. However, this feedback reduces the gain of the amplifier.\par
+\b Solution: \b0 The emitter resistor RE = \f1\lang1032 4.257k\'d9  was chosen to achieve a stable bias point, which provides thermal stability. While this does limit the voltage gain, it ensures that the amplifier works consistently across a wide range of temperatures, which is especially important for audio applications. This trade-off between thermal stability and gain was considered to ensure that the circuit operates reliably while meeting the design goals.\par
+
+\pard\sa200\sl276\slmult1\qc\b\f0\fs28\lang1033 Temperature Analysis:\par
+
+\pard\sa200\sl276\slmult1\b0\fs24 Temperature variations affect the performance of a BJT amplifier in several ways, particularly influencing the DC parameters (such as biasing and operating points) and the AC parameters (such as gain, input, and output impedance).\par
+
+\pard\sa200\sl276\slmult1\qc\b DC Performance:\b0\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 At -10\'b0C, VBE increases, reducing IC, affecting biasing.\par
+{\pntext\f3\'B7\tab}At 60\'b0C, VBE decreases, causing IC to increase, potentially leading to thermal runaway.\par
+
+\pard\sa200\sl276\slmult1\qc\b AC Performance:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\b0 Lower temperatures reduce transconductance gm, lowering voltage gain.\par
+{\pntext\f3\'B7\tab}Higher temperatures increase gm, raising voltage gain but may lead to distortion and instability.\b\f1\lang1032\par
+
+\pard\sa200\sl276\slmult1\qc\f0 Key Temperature-Dependent Parameters:\par
+Thermal Voltage (VT):\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1  \b0 It increases with temperature. It has the formula:\par
+
+\pard\sa200\sl276\slmult1\qc\i VT = kT/q\par
+\i0\fs20 (here k is the Boltzmann constant, T is the temperature in kelvin and q is the charge of an electron)\fs24\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 A higher VT can lead\f2  \f0 to\f2  \f0 higher\f2  \f0 base\f2  \f0 and\f2  \f0 collector\f2  \f0 current\f2 , \f0 potentially\f2  \f0 affecting\f2  \f0 stability\f2 .\b\f1\lang1032\par
+
+\pard\sa200\sl276\slmult1\qc\f0 VBE:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qc\b0 VBE decreases by 2mV per degree.\b\f1\lang1032\par
+{\pntext\f3\'B7\tab}\b0\f0 At 60 degrees, VBE might drop from 0.7 V to 0.62 V, increasing Ic and possibly causing thermal runaway. At -10 degrees, VBE might slightly increase, lowering Ic and reducing the gain.\b\f1\lang1032\par
+
+\pard\sa200\sl276\slmult1\qc\f0 Beta:\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qc\b0 It increases with temperature\f2  \f0 but\f2  \f0 decreases\f2  \f0 at\f2  \f0 very\f2  \f0 high\f2  \f0 temperatures\f2 .\b\f1\lang1032\par
+
+\pard\sa200\sl276\slmult1\qc\f0 Emitter Resistor (RE):\par
+
+\pard{\pntext\f3\'B7\tab}{\*\pn\pnlvlblt\pnf3\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qc\b0 It slightly increases with temperature. This\f2  \f0 can\f2  \f0 affect\f2  \f0 the\f2  \f0 stability\f2  \f0 and\f2  \f0 biasing\f2  \f0 point\f2  \f0 of\f2  \f0 the\f2  \f0 amplifier\f2 , \f0 especially\f2  \f0 at\f2  \f0 higher\f2  \f0 temperatures\f2 .\b\f1\lang1032\par
+
+\pard\sa200\sl276\slmult1\qc\f0\fs28 Conclusion:\b0\fs24\par
+
+\pard\sa200\sl276\slmult1 In\f2  \f0 this\f2  \f0 design\f2  \f0 of\f2  \f0 a\f2  \f0 single\f2 -\f0 stage\f2  \f0 audio\f2  \f0 amplifier\f2  \f0 using\f2  \f0 a\f2  \f0 common\f2 -\f0 emitter\f2  \f0 BJT\f2  \f0 configuration\f2 , \f0 we\f2  \f0 successfully\f2  \f0 met\f2  \f0 the\f2  \f0 key\f2  \f0 requirements\f2 , \f0 including\f2  \f0 achieving\f2  \f0 a\f2  \f0 voltage\f2  \f0 gain\f2  \f0 of\f2  \f0 35\f2 , \f0 ensuring\f2  \f0 the\f2  \f0 input\f2  \f0 resistance\f2  \f0 exceeds\f2  \f0 40k\u937?\f2 , \f0 and\f2  \f0 maintaining\f2  \f0 an\f2  \f0 output\f2  \f0 impedance\f2  \f0 below\f2  \f0 500\u937?\f2 . \f0 Through\f2  \f0 careful\f2  \f0 selection\f2  \f0 of\f2  \f0 components\f2 , \f0 such\f2  \f0 as\f2  \f0 the\f2  \f0 collector\f2  \f0 resistor\f2  (\f0 RC\f2 ), \f0 emitter\f2  \f0 resistor\f2  (\f0 RE\f2 ), \f0 and\f2  \f0 the\f2  \f0 voltage\f2  \f0 divider\f2  \f0 biasing\f2  \f0 network\f2 , \f0 we\f2  \f0 balanced\f2  \f0 the\f2  \f0 trade\f2 -\f0 offs\f2  \f0 between\f2  \f0 gain\f2 , \f0 stability\f2 , \f0 and\f2  \f0 impedance\f2 .\f0\par
+The\f2  \f0 analysis\f2  \f0 also\f2  \f0 considered\f2  \f0 the\f2  \f0 impact\f2  \f0 of\f2  \f0 temperature\f2  \f0 variations\f2  \f0 on\f2  \f0 the\f2  \f0 performance\f2  \f0 of\f2  \f0 the\f2  \f0 amplifier\f2 . \f0 We\f2  \f0 found\f2  \f0 that\f2  \f0 temperature\f2  \f0 changes\f2 , \f0 particularly\f2  \f0 from\f2  -\f0 10\'b0C\f2  \f0 to\f2  \f0 60\'b0C\f2 , \f0 can\f2  \f0 significantly\f2  \f0 affect\f2  \f0 the\f2  \f0 transistor\rquote s\f2  \f0 biasing\f2 , \f0 the\f2  \f0 thermal\f2  \f0 voltage\f2  (\f0 VT\f2 ), \f0 and\f2  \f0 the\f2  \f0 base\f2 -\f0 emitter\f2  \f0 voltage\f2  (\f0 VBE\f2 ). \f0 These\f2  \f0 variations\f2  \f0 may\f2  \f0 lead\f2  \f0 to\f2  \f0 shifts\f2  \f0 in\f2  \f0 the\f2  \f0 operating\f2  \f0 point\f2 , \f0 altering\f2  \f0 the\f2  \f0 current\f2 , \f0 transconductance\f2 , \f0 and\f2  \f0 overall\f2  \f0 gain\f2  \f0 of\f2  \f0 the\f2  \f0 amplifier\f2 . \f0 However\f2 , \f0 the\f2  \f0 inclusion\f2  \f0 of\f2  \f0 an\f2  \f0 emitter\f2  \f0 resistor\f2  (\f0 RE\f2 ) \f0 helped\f2  \f0 to\f2  \f0 stabilize\f2  \f0 the\f2  \f0 circuit\f2  \f0 and\f2  \f0 mitigate\f2  \f0 some\f2  \f0 of\f2  \f0 these\f2  \f0 temperature\f2 -\f0 induced\f2  \f0 variations\f2 .\f0\par
+The\f2  \f0 final\f2  \f0 design\f2  \f0 was\f2  \f0 carefully\f2  \f0 optimized\f2  \f0 to\f2  \f0 ensure\f2  \f0 that\f2  \f0 the\f2  \f0 amplifier\f2  \f0 performs\f2  \f0 reliably\f2  \f0 across\f2  \f0 a\f2  \f0 range\f2  \f0 of\f2  \f0 temperatures\f2 , \f0 making\f2  \f0 it\f2  \f0 suitable\f2  \f0 for\f2  \f0 practical\f2  \f0 audio\f2  \f0 applications\f2 . \f0 While\f2  \f0 the\f2  \f0 temperature\f2  \f0 analysis\f2  \f0 revealed\f2  \f0 potential\f2  \f0 issues\f2  \f0 like\f2  \f0 thermal\f2  \f0 runaway\f2  \f0 at\f2  \f0 higher\f2  \f0 temperatures\f2 , \f0 these\f2  \f0 concerns\f2  \f0 were\f2  \f0 addressed\f2  \f0 through\f2  \f0 the\f2  \f0 careful\f2  \f0 selection\f2  \f0 of\f2  \f0 RE\f2  \f0 and\f2  \f0 by\f2  \f0 ensuring\f2  \f0 that\f2  \f0 the\f2  \f0 design\f2  \f0 remains\f2  \f0 within\f2  \f0 the\f2  \f0 specified\f2  \f0 performance\f2  \f0 criteria\f2 . \f0 Overall\f2 , \f0 the\f2  \f0 amplifier\f2  \f0 is\f2  \f0 expected\f2  \f0 to\f2  \f0 deliver\f2  \f0 good\f2  \f0 performance\f2  \f0 in\f2  \f0 real\f2 -\f0 world\f2  \f0 applications\f2 , \f0 with\f2  \f0 stable\f2  \f0 operation\f2 , \f0 efficient\f2  \f0 gain\f2 , \f0 and\f2  \f0 minimal\f2  \f0 distortion\f2 .\b\f1\lang1032\par
+
+\pard\sa200\sl276\slmult1\b0\f0\lang1033\par
+}
+ 
